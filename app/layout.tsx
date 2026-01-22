@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { GlobalScene } from "@/components/three/global-scene";
 
 const notoSansJP = Noto_Sans_JP({
     subsets: ["latin"],
@@ -32,7 +33,8 @@ export default function RootLayout({
                 notoSansJP.variable,
                 notoSerifJP.variable
             )}>
-                <main className="relative flex flex-col min-h-screen">
+                <GlobalScene />
+                <main className="relative flex flex-col min-h-screen z-10">
                     {children}
                 </main>
             </body>

@@ -5,11 +5,11 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 export default function Home() {
     return (
-        <div className="flex flex-col w-full bg-background text-primary selection:bg-secondary/30">
+        <div className="flex flex-col w-full bg-transparent text-primary selection:bg-secondary/30">
             <HeroSection />
 
             {/* Philosophy / Problem Section */}
-            <section className="min-h-[60vh] flex items-center justify-center border-b border-surface/50 bg-surface/30">
+            <section className="min-h-[60vh] flex items-center justify-center border-b border-surface/50 bg-surface/10 backdrop-blur-sm">
                 <div className="max-w-4xl mx-auto px-6 py-24 text-center">
                     <h2 className="text-3xl font-serif mb-12 text-primary tracking-widest">PHILOSOPHY</h2>
                     <div className="text-lg md:text-xl text-secondary leading-loose font-light">
@@ -22,26 +22,26 @@ export default function Home() {
             </section>
 
             {/* Approach Section */}
-            <section className="py-24 px-6 bg-background border-b border-surface/50">
+            <section className="py-24 px-6 bg-transparent border-b border-surface/50">
                 <div className="max-w-7xl mx-auto">
                     <h3 className="text-xl font-serif text-secondary mb-12 tracking-[0.3em] uppercase text-center opacity-60">Approach</h3>
                     <BentoGrid className="max-w-4xl mx-auto">
                         <BentoGridItem
                             title="Decision First"
                             description="「何を決める必要があるか」から逆算し、必要なデータだけを定義します。"
-                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/5" />}
+                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-surface/20 border border-white/5" />}
                             className="md:col-span-1"
                         />
                         <BentoGridItem
                             title="Data Design"
                             description="既存の業務フローに負荷をかけない、持続可能なデータ収集プロセスを設計。"
-                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/5" />}
+                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-surface/20 border border-white/5" />}
                             className="md:col-span-1"
                         />
                         <BentoGridItem
                             title="Analytics"
                             description="高度な統計手法と現場の肌感を融合させた、納得感のある分析。"
-                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/5" />}
+                            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-surface/20 border border-white/5" />}
                             className="md:col-span-1"
                         />
                     </BentoGrid>
@@ -49,7 +49,7 @@ export default function Home() {
             </section>
 
             {/* Services Section */}
-            <section className="py-32 px-6 bg-background">
+            <section className="py-32 px-6 bg-transparent">
                 <div className="max-w-7xl mx-auto">
                     <h3 className="text-xl font-serif text-secondary mb-12 tracking-[0.3em] uppercase text-center opacity-60">Services</h3>
                     <HoverEffect items={[
@@ -82,7 +82,7 @@ export default function Home() {
             </section>
 
             {/* SME Focus Section */}
-            <section className="py-24 px-6 bg-surface/20 border-t border-white/5">
+            <section className="py-24 px-6 bg-surface/20 backdrop-blur-md border-t border-white/5">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
                     <div className="flex-1">
                         <h3 className="text-xl font-serif text-secondary mb-8 tracking-[0.2em] uppercase opacity-60">Focus</h3>
@@ -95,7 +95,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="flex-1 w-full flex justify-center">
-                        <div className="w-full max-w-sm h-64 border border-secondary/20 rounded-sm relative flex items-center justify-center p-8">
+                        <div className="w-full max-w-sm h-64 border border-secondary/20 rounded-sm relative flex items-center justify-center p-8 bg-surface/30">
                             <span className="font-serif text-6xl text-surface font-bold absolute z-0 select-none opacity-20">REALITY</span>
                             <div className="relative z-10 text-center">
                                 <p className="text-sm tracking-widest text-primary mb-2">PRACTICALITY OVER HYPE</p>
@@ -107,7 +107,7 @@ export default function Home() {
             </section>
 
             {/* About / Organization */}
-            <section className="py-32 px-6 bg-background">
+            <section className="py-32 px-6 bg-transparent">
                 <div className="max-w-5xl mx-auto text-center">
                     <h3 className="text-xl font-serif text-secondary mb-16 tracking-[0.3em] uppercase opacity-60">Organization</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-left">
@@ -132,7 +132,7 @@ export default function Home() {
             </section>
 
             {/* Contact Section */}
-            <section className="py-24 px-6 border-t border-surface/50 bg-surface/10">
+            <section className="py-24 px-6 border-t border-surface/50 bg-surface/10 backdrop-blur-sm">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-serif text-primary mb-8">Contact</h2>
                     <p className="text-secondary/60 mb-12 font-light">
@@ -144,7 +144,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <footer className="py-12 text-center text-xs text-secondary/30 border-t border-surface bg-background">
+            <footer className="py-12 text-center text-xs text-secondary/30 border-t border-surface bg-background/50 backdrop-blur-md">
                 <p>&copy; 2024 Neural Point Analytica. All rights reserved.</p>
             </footer>
         </div>

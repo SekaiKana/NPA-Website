@@ -1,26 +1,11 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { ParticleGrid } from "./three/scene";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-background">
-            {/* 3D Background */}
-            <div className="absolute inset-0 z-0">
-                <Canvas
-                    camera={{ position: [0, 5, 10], fov: 45 }}
-                    gl={{ antialias: true, alpha: true }}
-                    dpr={[1, 2]} // Optimize for pixel ratio
-                >
-                    <Suspense fallback={null}>
-                        <ParticleGrid />
-                    </Suspense>
-                    <fog attach="fog" args={["#1a1614", 5, 20]} />
-                </Canvas>
-            </div>
+        <section className="relative h-screen w-full overflow-hidden bg-transparent">
+            {/* Global Scene handles the background now */}
 
             {/* Content Overlay */}
             <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
