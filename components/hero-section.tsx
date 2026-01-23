@@ -4,37 +4,45 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-transparent">
-            {/* Global Scene handles the background now */}
+        <section className="relative h-screen w-full overflow-hidden bg-transparent pt-[60px]">
+            {/* Global Scene handles the background */}
 
             {/* Content Overlay */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-                <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="relative z-10 h-full w-full max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 items-center">
+                <div className="col-span-12 md:col-span-8 flex flex-col justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                         className="text-left"
                     >
-                        <h2 className="text-secondary text-sm md:text-base tracking-[0.2em] mb-4 uppercase">
-                            Neural Point Analytica
+                        <h2 className="text-secondary font-mono text-xs md:text-sm tracking-wider mb-8">
+                            NEURAL POINT ANALYTICA
                         </h2>
-                        <h1 className="text-5xl md:text-7xl font-serif text-primary mb-6 leading-tight">
-                            ビジネスの真実を<br />
-                            <span className="text-secondary/80">データで語る。</span>
+
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-primary mb-8 leading-[1.1] tracking-tight">
+                            「直感」を<br />
+                            <span className="text-[#524a44]">「確信」へ。</span>
                         </h1>
-                        <p className="text-secondary/60 max-w-lg text-sm md:text-base leading-loose font-light">
-                            感情や直感だけに頼らない。<br />
-                            確固たるデータ基盤の上に、<br />
-                            貴社の意思決定システムを構築します。
+
+                        <div className="w-full h-[1px] bg-[#333333] mb-8 max-w-sm"></div>
+
+                        <p className="text-secondary max-w-xl text-sm md:text-base leading-relaxed font-sans font-light">
+                            中小企業の意思決定における不確実性を排除する。<br />
+                            データ構造化から始まる、実利的な経営判断支援。
                         </p>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10">
-                <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-secondary/50 to-transparent opacity-50"></div>
+            {/* Scroll Indicator - Minimal */}
+            <div className="absolute bottom-0 left-6 md:left-12 z-10">
+                <div className="flex flex-col items-center gap-4">
+                    <span className="text-[10px] font-mono text-secondary/40 tracking-widest -rotate-90 origin-bottom-left translate-x-2 pb-12">
+                        SCROLL
+                    </span>
+                    <div className="w-[1px] h-24 bg-[#333333]"></div>
+                </div>
             </div>
         </section>
     );

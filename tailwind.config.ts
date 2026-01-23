@@ -23,6 +23,8 @@ const config: Config = {
             fontFamily: {
                 sans: ['var(--font-noto-sans)', 'sans-serif'],
                 serif: ['var(--font-noto-serif)', 'serif'],
+                mono: ['var(--font-jetbrains-mono)', 'monospace'],
+                "pt-serif": ['var(--font-pt-serif)', 'serif'],
             },
         }
     },
