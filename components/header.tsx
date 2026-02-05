@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 
 export function Header() {
     const navItems = [
-        { name: "Methodology", href: "#philosophy" },
+        { name: "Philosophy", href: "#philosophy" },
+        { name: "Methodology", href: "#methodology" },
         { name: "Services", href: "#services" },
         { name: "Contact", href: "#contact" },
     ];
@@ -18,7 +19,7 @@ export function Header() {
             initial={{ y: -100, x: "-50%", opacity: 0 }}
             animate={{ y: 0, x: "-50%", opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="fixed top-6 left-1/2 z-50 w-[80%] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex items-center justify-between gap-40 px-12 py-4"
+            className="fixed top-6 left-1/2 z-50 w-[80%] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex items-center justify-between gap-40 px-12 py-3"
         >
             <div className="flex items-center">
                 <Link href="/" className="font-pt-serif text-2xl text-primary hover:text-white transition-colors flex items-center gap-4">
@@ -27,7 +28,7 @@ export function Header() {
                         alt="NPA Logo"
                         width={100}
                         height={100}
-                        className="w-12 h-12 object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.8)]"
+                        className="w-12 h-12 object-contain drop-shadow-[0_0_45px_rgba(255,255,255,0.9)]"
                     />
                     <span className="hidden md:inline">Neural Point Analytica</span>
                     <span className="md:hidden">NPA</span>

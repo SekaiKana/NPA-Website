@@ -21,15 +21,15 @@ export function HeroSection() {
                         </h2>
 
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-primary mb-8 leading-[1.1] tracking-tight">
-                            「直感」を<br />
-                            <span className="text-[#524a44]">「確信」へ。</span>
+                            <span className="text-[#524a44]">「直感」を</span><br />
+                            <span className="">「確信」へ。</span>
                         </h1>
 
                         <div className="w-full h-[1px] bg-[#333333] mb-8 max-w-sm"></div>
 
                         <p className="text-secondary max-w-xl text-sm md:text-base leading-relaxed font-sans font-light">
-                            中小企業の意思決定における不確実性を排除する。<br />
-                            データ構造化から始まる、実利的な経営判断支援。
+                            データの整理・構造化から始める、中小企業のための経営判断支援。<br />
+                            現場に散在するデータを、意思決定に使える形へ。
                         </p>
                     </motion.div>
                 </div>
@@ -41,7 +41,7 @@ export function HeroSection() {
                     <span className="text-[10px] font-mono text-secondary/40 tracking-widest -rotate-90 origin-bottom-left translate-x-2 pb-12">
                         SCROLL
                     </span>
-                    <div className="w-[1px] h-24 bg-[#333333]"></div>
+
                 </div>
             </div>
         </section>
