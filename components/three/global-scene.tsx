@@ -26,9 +26,10 @@ const vertexShader = `
     }
 `;
 
-function Particles({ scrollProgress }: { scrollProgress: number }) {
+function Particles({ scrollProgress, isMobile }: { scrollProgress: number, isMobile: boolean }) {
     const points = useRef<THREE.Points>(null!);
     const count = 3000;
+    // ... (rest of the logic remains roughly same, but we only touched signature and return)
 
     // Define states
     // State 0: Chaos (Random distribution)
@@ -169,7 +170,7 @@ function Particles({ scrollProgress }: { scrollProgress: number }) {
     });
 
     return (
-        <points ref={points}>
+        <points ref={points} scale={isMobile ? 0.45 : 1}>
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"
@@ -207,8 +208,13 @@ function Particles({ scrollProgress }: { scrollProgress: number }) {
 
 export function GlobalScene() {
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize(); // Initial check
+        window.addEventListener("resize", handleResize);
+
         const handleScroll = () => {
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = window.scrollY / totalHeight;
@@ -218,7 +224,10 @@ export function GlobalScene() {
         window.addEventListener("scroll", handleScroll);
         // Initial call
         handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
+        }
     }, []);
 
     return (
@@ -229,7 +238,7 @@ export function GlobalScene() {
                 dpr={[1, 2]}
             >
                 <fog attach="fog" args={["#1a1614", 5, 30]} />
-                <Particles scrollProgress={scrollProgress} />
+                <Particles scrollProgress={scrollProgress} isMobile={isMobile} />
             </Canvas>
         </div>
     );

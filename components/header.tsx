@@ -31,14 +31,14 @@ export function Header() {
             className="fixed top-6 left-1/2 z-50 w-[95%] md:w-[80%] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex items-center justify-between gap-4 md:gap-40 px-6 md:px-12 py-3"
         >
             <div className="flex items-center">
-                <Link href="/" className="font-pt-serif text-2xl text-primary hover:text-white transition-colors flex items-center gap-4">
+                <Link href="/" className="font-pt-serif text-lg md:text-2xl text-primary hover:text-white transition-colors flex items-center gap-3 md:gap-4">
                     <Image
                         src={NPALogoo}
                         alt="NPA Logo"
                         width={100}
                         height={100}
-                        className="w-12 h-12 object-contain"
-                        style={{ filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 1.0))" }}
+                        className="w-7 h-7 md:w-12 md:h-12 object-contain"
+                        style={{ filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 1.0))" }}
 
                     />
                     <span className="hidden md:inline">Neural Point Analytica</span>
