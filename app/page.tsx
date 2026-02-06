@@ -71,14 +71,14 @@ export default function Home() {
                                 <div key={item.id} className="group border border-[#333333] hover:border-secondary/30 transition-colors p-6 flex flex-col justify-between min-h-[240px] bg-background/30 backdrop-blur-sm">
                                     <div>
                                         <div className="flex justify-between items-start mb-6">
-                                            <span className="font-mono text-xs text-secondary/40">{item.id}</span>
+                                            <span className="font-mono text-xs text-secondary/60">{item.id}</span>
                                             <div className="w-2 h-2 bg-[#333333] rounded-full group-hover:bg-primary/50 transition-colors"></div>
                                         </div>
                                         <h3 className="text-lg font-serif text-primary mb-4">{item.title}</h3>
-                                        <p className="text-sm text-secondary/60 leading-relaxed font-light">{item.desc}</p>
+                                        <p className="text-sm text-secondary/90 leading-relaxed font-light">{item.desc}</p>
                                     </div>
                                     <div className="mt-8 pt-4 border-t border-[#333333]/50">
-                                        <span className="font-mono text-[10px] text-secondary/40 uppercase tracking-widest">{item.meta}</span>
+                                        <span className="font-mono text-[10px] text-secondary/60 uppercase tracking-widest">{item.meta}</span>
                                     </div>
                                 </div>
                             ))}
@@ -130,25 +130,25 @@ export default function Home() {
                                     <div className="flex justify-between items-start mb-8">
                                         <h3 className="text-xl font-serif text-primary max-w-[70%] leading-tight">
                                             {service.title}
-                                            <span className="block text-xs font-sans text-secondary/50 mt-2 font-normal">{service.jp}</span>
+                                            <span className="block text-xs font-sans text-secondary/70 mt-2 font-normal">{service.jp}</span>
                                         </h3>
-                                        <span className="font-mono text-xs text-secondary/40 border border-[#333333] px-2 py-1">
+                                        <span className="font-mono text-xs text-secondary/60 border border-[#333333] px-2 py-1">
                                             SRV-{String(idx + 1).padStart(2, '0')}
                                         </span>
                                     </div>
-                                    <p className="text-sm text-secondary/70 leading-relaxed font-light mb-8 min-h-[3em]">
+                                    <p className="text-sm text-secondary/90 leading-relaxed font-light mb-8 min-h-[3em]">
                                         {service.desc}
                                     </p>
                                     <div className="space-y-4 border-t border-[#333333] pt-6">
                                         <div className="flex flex-wrap gap-2">
                                             {service.specs.map(spec => (
-                                                <span key={spec} className="text-[10px] font-mono text-secondary/60 bg-[#333333]/30 px-2 py-1">
+                                                <span key={spec} className="text-[10px] font-mono text-secondary/80 bg-[#333333]/30 px-2 py-1">
                                                     {spec}
                                                 </span>
                                             ))}
                                         </div>
                                         <div className="flex justify-between items-center pt-2">
-                                            <span className="font-mono text-[10px] text-secondary/40">TIMELINE</span>
+                                            <span className="font-mono text-[10px] text-secondary/60">TIMELINE</span>
                                             <span className="font-mono text-[10px] text-primary">{service.timeline}</span>
                                         </div>
                                     </div>
@@ -168,11 +168,11 @@ export default function Home() {
                     </div>
                     <div className="md:col-span-9 flex flex-col md:flex-row justify-between items-start gap-12 text-left">
                         <div className="max-w-xl text-left items-start">
-                            <p className="text-secondary/60 font-light leading-relaxed mb-8 text-left">
+                            <p className="text-secondary/90 font-light leading-relaxed mb-8 text-left">
                                 プロジェクトのご相談、協業のご依頼はこちらから。<br />
                                 新規案件の着手は翌月以降となります。
                             </p>
-                            <a href="rentaro.sato@npanalytica.com" className="inline-block px-10 py-4 border border-secondary/40 text-primary hover:bg-white hover:text-background hover:border-white transition-all duration-300 font-mono text-xs tracking-widest uppercase rounded-none">
+                            <a href="mailto:rentaro.sato@npanalytica.com" className="inline-block px-10 py-4 border border-secondary/40 text-primary hover:bg-white hover:text-background hover:border-white transition-all duration-300 font-mono text-xs tracking-widest uppercase rounded-none">
                                 Contact Us
                             </a>
                         </div>
@@ -185,8 +185,12 @@ export default function Home() {
             </section>
 
             <footer className="py-12 border-t border-[#333333] bg-transparent">
-                <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-center items-center">
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center gap-4">
                     <p className="text-[10px] font-mono text-secondary/30">&copy; 2026 NEURAL POINT ANALYTICA. ALL RIGHTS RESERVED.</p>
+                    <div className="flex gap-6">
+                        {/* <Link href="#" className="text-[10px] font-mono text-secondary/30 hover:text-secondary/60 transition-colors">PRIVACY POLICY</Link> */}
+                        <Link href="/location" className="text-[10px] font-mono text-secondary/30 hover:text-secondary/60 transition-colors">LOCATION</Link>
+                    </div>
                 </div>
             </footer>
         </div>
